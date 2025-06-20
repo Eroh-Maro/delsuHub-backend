@@ -12,7 +12,7 @@ const port = process.env.PORT || 5000;
 
 app.use(express.json());
 app.use(cors({
-    origin: ['http://localhost:5173', "https://delsu-hub-frontend-i7fo.vercel.app"],
+    origin: ['http://localhost:5173', "https://delsu-hub-frontend-upnn.vercel.app"],
     credentials: true}
 ));
 
