@@ -19,13 +19,17 @@ app.use(cors({
 app.use("/api/concerns", concernRoutes);
 app.use("/api/events", eventRoutes);
 // Connect to MongoDB
+app.get("/", (req, res) => {
+  res.send("Delsu Server is running!");
+});
+
 async function main() {
- await mongoose.connect(process.env.DB_URL);
-    app.get('/', (req, res) => {
-        res.send('Book server is running!');
-    });
+  await mongoose.connect(process.env.DB_URL);
 }
-main().then(() => console.log('MongoDB connected...')).catch(err => console.log(err));
+
+main()
+  .then(() => console.log("Mongodb connect successfully!"))
+  .catch((err) => console.log(err));
 
 app.listen(port, () => {
     console.log(`Server is running on port ${port}`);
