@@ -12,9 +12,12 @@ const port = process.env.PORT || 5000;
 
 app.use(express.json());
 app.use(cors({
-    origin: ['http://localhost:5173', "https://delsu-hub-frontend-upnn.vercel.app"],
-    credentials: true}
-));
+    origin: [
+        'http://localhost:5173',
+        'https://delsu-hub-frontend-upnn.vercel.app'
+    ],
+    credentials: true
+}));
 
 app.use("/api/concerns", concernRoutes);
 app.use("/api/events", eventRoutes);
